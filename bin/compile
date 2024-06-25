@@ -12,7 +12,7 @@ CACHED_BINARY=$CACHE_DIR/cloud_sql_proxy_$VERSION
 if [ ! -f $CACHED_BINARY ]; then
 	echo "-----> Downloading cloud_sql_proxy v$VERSION binary"
 	mkdir -p $CACHE_DIR
-	wget https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v$VERSION/cloud-sql-proxy.linux.amd64 -O $CACHE_DIR
+	wget https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v$VERSION/cloud-sql-proxy.linux.amd64 -O $CACHED_BINARY
 else
 	echo "-----> Found cloud_sql_proxy in the build cache"
 fi
