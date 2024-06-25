@@ -33,8 +33,8 @@ if [ ! -d $BUILD_DIR/bin ]; then
 	mkdir $BUILD_DIR/bin
 fi
 
-mkdir -p "$BUILD_DIR"/.profile.d
-cat <<EOF >"$BUILD_DIR"/.profile.d/cloud_sql_proxy.sh
+mkdir -p $BUILD_DIR/.profile.d
+cat <<EOF >$BUILD_DIR/.profile.d/cloud_sql_proxy.sh
 echo "-----> Adding credentials JSON"
 printf "%s" "\$GSP_CREDENTIALS" | base64 --decode > /app/google/credentials.json
 exec /app/google/bin/cloud_sql_proxy -credential_file=/app/google/credentials.json -instances=\$GSP_INSTANCE -dir=/tmp &
